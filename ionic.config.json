@@ -1,0 +1,7 @@
+{
+  "name": "SpaceApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
