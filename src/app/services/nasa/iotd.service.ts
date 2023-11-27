@@ -12,6 +12,8 @@ export class IotdService {
   constructor(private http: HttpClient) { }
 
   get$() {
-    return this.http.get<IOTD>(`${environment.nasaBaseUrl}/planetary/apod?thumbs=true&api_key=${environment.nasaKey}`);
+    let response = this.http.get<IOTD>(`${environment.nasaBaseUrl}/planetary/apod?thumbs=true&api_key=${environment.nasaKey}`);
+    response.subscribe(val => console.log(val));
+    return response;
   }
 }

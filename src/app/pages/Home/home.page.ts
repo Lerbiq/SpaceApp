@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable} from "rxjs";
+import {IOTD} from "../../models/iotd";
+import {IotdService} from "../../services/nasa/iotd.service";
 
 @Component({
   selector: 'app-Home',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  iotd$: Observable<IOTD>;
+  constructor(
+    private iotdService: IotdService
+  ) {
+    this.iotd$ = this.iotdService.get$();
+  }
+
+
 
 }
