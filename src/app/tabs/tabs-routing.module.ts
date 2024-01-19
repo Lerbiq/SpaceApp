@@ -13,11 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'Launches',
-        loadChildren: () => import('../pages/Launches/launches.module').then(m => m.Tab2PageModule)
-      },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../pages/tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../pages/Launches/launches.module').then(m => m.LaunchesModule)
       },
       {
         path: '',

@@ -1,0 +1,25 @@
+<div class="count-down-timer" *ngIf="(timeRemaining$ | async) as t">
+  <div>
+    <h1>T−</h1>
+    <!--TODO:<h1>T+</h1>-->
+  </div>
+  <div>
+    <h1>{{t.daysToDday}}</h1>
+    <p>Days</p>
+  </div>
+  <div><h1>:</h1></div>
+  <div>
+    <h1>{{t.hoursToDday}}</h1>
+    <p>Hours</p>
+  </div>
+  <div><h1>:</h1></div>
+  <div>
+    <h1>{{t.minutesToDday}}</h1>
+    <p>Mins</p>
+  </div>
+  <div><h1>:</h1></div>
+  <div>
+    <h1>{{t.secondsToDday}}</h1>
+    <p>Secs</p>
+  </div>
+</div>

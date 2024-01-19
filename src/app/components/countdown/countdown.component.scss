@@ -1,0 +1,9 @@
+.count-down-timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  > div {
+    text-align: center;
+    margin: 1%;
+  }
+}

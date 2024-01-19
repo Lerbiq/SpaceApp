@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable} from "rxjs";
+import {Launches, Result, Status} from "../../models/launches";
+import {LaunchlibService} from "../../services/launchlib/launchlib.service";
 
 @Component({
   selector: 'app-Launches',
@@ -7,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class LaunchesPage {
 
-  constructor() {}
-
+  launches$: Observable<Launches>;
+  constructor(
+    private launchLibService: LaunchlibService
+  ) {
+    this.launches$ = this.launchLibService.getUpcoming$();
+  }
 }

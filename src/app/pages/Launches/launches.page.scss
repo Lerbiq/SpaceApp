@@ -1,0 +1,8 @@
+.img-badge > app-status-badge{
+  margin: 1%;
+  position:absolute;
+}
+
+ion-card-content > hr{
+  background: var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-600, #666666)));
+}

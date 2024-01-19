@@ -1,0 +1,11 @@
+<div [ngSwitch]="abbrev">
+  <ion-badge *ngSwitchCase="'Go'" (click)="showPopover($event)" color="success">{{abbrev.toUpperCase()}}</ion-badge>
+  <ion-badge *ngSwitchCase="'TBC'" (click)="showPopover($event)" color="warning">{{abbrev}}</ion-badge>
+  <ion-badge *ngSwitchCase="'TBD'" (click)="showPopover($event)" color="danger">{{abbrev}}</ion-badge>
+  <ion-badge *ngSwitchDefault color="primary">{{abbrev}}</ion-badge>
+  <ion-popover *ngIf="description !== undefined" #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding">{{description}}</ion-content>
+    </ng-template>
+  </ion-popover>
+</div>

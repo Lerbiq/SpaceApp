@@ -5,7 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { LaunchesPage } from './launches.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { Tab2PageRoutingModule } from './launches-routing.module';
+import { LaunchesRoutingModule } from './launches-routing.module';
+import {CountdownComponent} from "../../components/countdown/countdown.component";
+import {IonImg} from "@ionic/angular/standalone";
+import {StatusBadgeComponent} from "../../components/status-badge/status-badge.component";
 
 @NgModule({
   imports: [
@@ -13,8 +16,12 @@ import { Tab2PageRoutingModule } from './launches-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    LaunchesRoutingModule
   ],
-  declarations: [LaunchesPage]
+  exports: [
+    CountdownComponent,
+    StatusBadgeComponent
+  ],
+  declarations: [LaunchesPage, CountdownComponent, StatusBadgeComponent]
 })
-export class Tab2PageModule {}
+export class LaunchesModule {}

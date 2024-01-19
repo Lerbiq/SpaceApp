@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Upcoming Launches
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,31 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">
+        Upcoming Launches
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ng-container *ngIf="launches$ | async; let launches">
+    <ng-container *ngFor="let item$ of launches.results">
+      <ion-card>
+        <div class="img-badge">
+          <app-status-badge abbrev="{{item$.status.abbrev}}"
+                            description="{{item$.status.description}}"></app-status-badge>
+          <ion-img *ngIf="item$.image" [src]="item$.image"></ion-img>
+        </div>
+        <ion-card-header>
+          <ion-card-title>{{ item$.name.split(" | ")[0] }}</ion-card-title>
+          <ion-card-subtitle>{{ item$.name.split(" | ")[1] }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ item$.launch_service_provider.name }}</p>
+          <p>{{ item$.pad.location.name }}</p>
+          <hr>
+          <app-countdown [dtString]="item$.window_start"></app-countdown>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ng-container>
 </ion-content>

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   nasaBaseUrl: "https://api.nasa.gov",
-  nasaKey: "KnbDMdbWjt5jL9TiZXkDADDYcfmaYb6XTKrXFuOD"
+  nasaKey: "KnbDMdbWjt5jL9TiZXkDADDYcfmaYb6XTKrXFuOD",
+  launchLibUrl: "https://lldev.thespacedevs.com"
 };
 
 /*
